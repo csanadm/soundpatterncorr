@@ -32,7 +32,7 @@ plt.plot(X, regressor.predict(X), color='red')
 plt.xlabel('weight (kg)')
 plt.ylabel(r'min aD$^2$ (dB$^2$)')
 plt.title('Linear Regression Fit')
-plt.text(0.2, 0.7, f"Slope = {regressor.coef_[0]:.2f} dB/kg\nIntercept = {regressor.intercept_:.2f} dB\n$R^2$ = {regressor.score(X,y**2):.2f}", transform=plt.gca().transAxes)
+plt.text(0.2, 0.7, f"Slope = {regressor.coef_[0]:.2f} dB^2/kg\nIntercept = {regressor.intercept_:.2f} dB^2\n$R^2$ = {regressor.score(X,y**2):.2f}", transform=plt.gca().transAxes)
 plt.savefig("weight_person_absorption_fit_square.png")
 
 
