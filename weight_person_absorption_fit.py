@@ -14,6 +14,7 @@ y = df["min aD (dB)"].values
 regressor = LinearRegression()
 regressor.fit(X, y)
 
+plt.figure()
 plt.scatter(X, y)
 plt.plot(X, regressor.predict(X), color='red')
 plt.xlabel('weight (kg)')
@@ -21,6 +22,18 @@ plt.ylabel('min aD (dB)')
 plt.title('Linear Regression Fit')
 plt.text(0.7, 0.7, f"Slope = {regressor.coef_[0]:.2f} dB/kg\nIntercept = {regressor.intercept_:.2f} dB\n$R^2$ = {regressor.score(X,y):.2f}", transform=plt.gca().transAxes)
 plt.savefig("weight_person_absorption_fit.png")
+
+regressor = LinearRegression()
+regressor.fit(X, y**2)
+
+plt.figure()
+plt.scatter(X, y**2)
+plt.plot(X, regressor.predict(X), color='red')
+plt.xlabel('weight (kg)')
+plt.ylabel(r'min aD$^2$ (dB$^2$)')
+plt.title('Linear Regression Fit')
+plt.text(0.2, 0.7, f"Slope = {regressor.coef_[0]:.2f} dB/kg\nIntercept = {regressor.intercept_:.2f} dB\n$R^2$ = {regressor.score(X,y**2):.2f}", transform=plt.gca().transAxes)
+plt.savefig("weight_person_absorption_fit_square.png")
 
 
 ##################################################
