@@ -5,4 +5,4 @@ In this small project library a few correlations are tested.
 - <a href="https://github.com/csanadm/soundpatterncorr/blob/main/weight_person_absorption_SVR.py">weight_person_absorption_SVR.py</a>: analyzing min aD vs weight with a machine learning framework
 ## Example output
 ![weight_person_absorption_fit](https://github.com/csanadm/soundpatterncorr/assets/38218165/666ba667-7705-46c5-a17c-eb0e606a7238)
-![weight_person_absorption_fit_highfreq](https://github.com/csanadm/soundpatterncorr/assets/38218165/98ead7c6-becd-407f-add7-735253e20e7b)
+![weight_person_absorption_fit_highfreq](https://github.com/csanadm/soundpatterncorr/assets/38218165/95464e45-b469-47c0-9181-d6391096ecd7)
