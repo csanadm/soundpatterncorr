@@ -41,8 +41,8 @@ plt.savefig("weight_person_absorption_fit_square.png")
 ##################################################
 
 df = pd.read_excel("weight_person_absorption.xlsx", sheet_name="Munka2")
-X = df["mean aD (dB)"].values.reshape(-1, 1)
-y = df["mean aD (dB) brain"].values
+X = df["mean aD (dB) sound"].values.reshape(-1, 1)
+y = df["mean aD (mV) brain"].values
 
 regressor = LinearRegression()
 regressor.fit(X, y)
@@ -51,14 +51,14 @@ plt.figure()
 plt.scatter(X, y)
 plt.plot(X, regressor.predict(X), color='red')
 plt.xlabel('mean aD (dB) sound')
-plt.ylabel('mean aD (dB) brain')
+plt.ylabel('mean aD (mV) brain')
 plt.title('Linear Regression Fit, mean aD sound vs brain')
-plt.text(0.2, 0.7, f"Slope = {regressor.coef_[0]:.2f}\nIntercept = {regressor.intercept_:.2f} dB\n$R^2$ = {regressor.score(X,y):.2f}", transform=plt.gca().transAxes)
+plt.text(0.2, 0.7, f"Slope = {regressor.coef_[0]:.2f} mV/dB\nIntercept = {regressor.intercept_:.2f} mV\n$R^2$ = {regressor.score(X,y):.2f}", transform=plt.gca().transAxes)
 
 plt.savefig("weight_person_absorption_fit_brain.png")
 
 X = df["mean aD (dB) high freq"].values.reshape(-1, 1)
-y = df["mean aD (dB) gamma"].values
+y = df["mean aD (mV) gamma"].values
 
 regressor = LinearRegression()
 regressor.fit(X, y)
@@ -67,7 +67,7 @@ plt.figure()
 plt.scatter(X, y)
 plt.plot(X, regressor.predict(X), color='red')
 plt.xlabel('mean aD (dB) high freq')
-plt.ylabel('mean aD (dB) gamma')
+plt.ylabel('mean aD (mV) gamma')
 plt.title('Linear Regression Fit, mean aD high freq vs gamma')
-plt.text(0.2, 0.7, f"Slope = {regressor.coef_[0]:.2f}\nIntercept = {regressor.intercept_:.2f} dB\n$R^2$ = {regressor.score(X,y):.2f}", transform=plt.gca().transAxes)
+plt.text(0.2, 0.7, f"Slope = {regressor.coef_[0]:.2f} mV/dB\nIntercept = {regressor.intercept_:.2f} mV\n$R^2$ = {regressor.score(X,y):.2f}", transform=plt.gca().transAxes)
 plt.savefig("weight_person_absorption_fit_highfreq.png")
